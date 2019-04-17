@@ -1,0 +1,20 @@
+language: php
+dist: trusty
+sudo: false
+branches:
+  only:
+    - master
+    - /^stage.*$/
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+
+before_install:
+  - if [[ $TRAVIS_PHP_VERSION = 5.6 ]]; then export COMPOSER_MEMORY_LIMIT=-1; fi;
+  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - phpenv config-rm xdebug.ini
+  - composer --verbose self-update --$COMPOSER_CHANNEL
+  - composer --version

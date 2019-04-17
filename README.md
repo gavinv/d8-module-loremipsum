@@ -26,7 +26,7 @@ phrases and it'll do the rest.
 
 If you need, there's also a specific *generate lorem ipsum* permission.
 
-### Attention
+### Maintenance
 
 Most bugs have been ironed out, holes covered, features added. But this module
 is a work in progress. Please report bugs and suggestions, ok?
