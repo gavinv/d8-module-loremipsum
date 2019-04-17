@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains loremipsum.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function loremipsum_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the loremipsum module.
+    case 'help.page.loremipsum':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Lorem ipsum generator for Drupal') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function loremipsum_theme() {
+  return [
+    'loremipsum' => [
+      'render element' => 'children',
+    ],
+  ];
+}
